@@ -1,0 +1,27 @@
+{
+  "name": "musily",
+  "version": "0.0.1",
+  "private": true,
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "expo": "^32.0.6",
+    "react": "16.6.3",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-native-vector-icons": "^6.4.2"
+  },
+  "devDependencies": {
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "24.4.0",
+    "jest": "24.4.0",
+    "metro-react-native-babel-preset": "0.53.0",
+    "react-test-renderer": "16.6.3",
+    "schedule": "^0.4.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

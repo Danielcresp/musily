@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
 import {StyleSheet,View} from 'react-native';
 import AlbumList from './src/AlbumList';
-// import { getAlbums } from './src/api-client';
-// require('console');
+import { getAlbums } from './src/api-client';
+require('console');
 
 type Props = {};
 export default class App extends Component<Props> {
-  // componentDidMount(){ // Se llama cuando el componete ya este rendereado
-  //   getAlbums()
-  //   .then(data => {
-  //       return console.warn(data);
-  //   })
-  //   // .them(data => console.warn(data))
-  // }
+  componentDidMount(){ // Se llama cuando el componete ya este rendereado
+    getAlbums()
+    .then(data => {
+        return console.warn(data);
+    })
+    // .them(data => console.warn(data))
+  }
 
   render() {
     const album = {

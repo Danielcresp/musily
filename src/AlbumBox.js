@@ -7,12 +7,12 @@ type Props = {};
 export default class AlbumBox extends Component<Props> {
 
   render() {
-    const {img, name, likes, comments} = this.props.album 
+    const {image, name, likes, comments} = this.props.album 
     return (
         <View style={styles.albunBox}>
         <Image
         style={styles.imag} 
-        source={{uri:img}}
+        source={{uri:image}}
         />
         <View style={styles.name}>
         <Text style={styles.name}>{name}</Text>

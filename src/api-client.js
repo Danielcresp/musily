@@ -6,16 +6,16 @@ function getAlbums(){
     return fetch(URL)
     .then(response => response.json()) //Formaterar la repuesta a json
     .then(data => data.albums.album)
-    .then(albumss => albumss.map(album=>{
+    .then(albums => albums.map(album=>{
         return{
             name: album.name,     
-            mage: album.image[3]['#text']
+            img: album.image[3]['#text'],
+            likes: 200,
+            comments:140,
         }
     }))
     // .then(data => {
     //     return console.warn(data);
     // })
-
-
 }
 export {getAlbums}

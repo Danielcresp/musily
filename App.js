@@ -6,22 +6,24 @@ require('console');
 
 type Props = {};
 export default class App extends Component<Props> {
-  componentDidMount(){ // Se llama cuando el componete ya este rendereado
-    getAlbums()
-    .then(data => {
-        return console.warn(data);
-    })
-    // .them(data => console.warn(data))
+
+ constructor(props){
+    super(props)
+
+  this.state={
+    albums:[]
   }
+}
+
+componentDidMount(){ // Se llama cuando el componete ya este rendereado
+    getAlbums()
+    // .then(data => {return console.warn(data);})
+    .then(data => this.setState({albums:data}))
+}
 
   render() {
-    const album = {
-      img: 'https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg',
-      name: 'The Beatles - "Abbey Road',
-      likes: 200,
-      comments: 140,
-   }
-    const albums = Array(500).fill(album)
+    const albums = this.state.albums
+
     return (
       <View style={styles.container}>
         <AlbumList albums={albums}/>

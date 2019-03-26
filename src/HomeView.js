@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet,View} from 'react-native';
-import AlbumList from './src/AlbumList';
+import AlbumList from './AlbumList';
 require('console');
 
 type Props = {};

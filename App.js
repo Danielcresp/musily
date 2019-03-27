@@ -1,25 +1,26 @@
 import React, {Component} from 'react';
-import {StyleSheet,View} from 'react-native';
-import AlbumList from './src/AlbumList';
-require('console');
+import {StyleSheet,Platform} from 'react-native';
+import {Scene, Router} from 'react-native-router-flux';
+
+import LoginView from './src/LoginView'
+import HomeView from './src/HomeView'
+import AlbumDetailView from './src/AlbumDetailView'
+
+// import { platform } from 'os';
 
 type Props = {};
-export default class HomeView extends Component<Props> {
+export default class App extends Component<Props> {
     
-  render() {
-    const album = {
-      image: 'https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg',
-      name: 'The Beatles - "Abbey Road',
-      likes: 200,
-      comments: 140,
-   }
-    const albums = Array(500).fill(album)
-    return (
-      <View style={styles.container}>
-        <AlbumList albums={albums}/>
-      </View>
-    )
-  }
+    render() {
+        const isAndroid = Platform.OS === 'android'
+        return <Router>
+          <Scene key="root">
+            <Scene key="login" component={LoginView} hideNavBar/>
+            <Scene key="home" component={HomeView} hideNavBar/>
+            <Scene key="albumDetail" component={AlbumDetailView} hideNavBar={isAndroid}/>
+          </Scene>
+        </Router>
+      }
 }
 const styles = StyleSheet.create({
   container: {

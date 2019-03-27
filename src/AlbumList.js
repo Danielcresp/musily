@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {ListView} from 'react-native';
+import {ListView,TouchableOpacity} from 'react-native';
 import AlbumBox from './AlbumBox'
+import { Actions } from 'react-native-router-flux';
 require('console');
 
 type Props = {};
@@ -13,14 +14,24 @@ export default class AlbumList extends Component<Props> {
       dataSource: ds.cloneWithRows(props.albums)
     };
   }
-  
 
+  handleBoxPress(album) {
+    Actions.albumDetail({ album })
+  }
   render() {
+    
     return (
       <ListView
         enableEmptySections={true}
         dataSource={this.state.dataSource}
-        renderRow={(album) => <AlbumBox album ={album}/>}
+        renderRow={(album) => {
+          return (
+            <TouchableOpacity
+            onPress={() => this.handleBoxPress(album)}>
+              <AlbumBox album ={album}/>
+            </TouchableOpacity>
+          )
+        }}
       />
     )
   }

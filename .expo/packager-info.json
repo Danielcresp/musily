@@ -1,10 +1,10 @@
 {
-  "expoServerPort": 19000,
+  "expoServerPort": null,
   "webpackServerPort": null,
-  "expoServerNgrokUrl": "https://yj-yd2.anonymous.musily.exp.direct",
-  "packagerNgrokUrl": "https://packager.yj-yd2.anonymous.musily.exp.direct",
-  "ngrokPid": 13348,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "devToolsPort": 19002,
-  "packagerPort": 19001,
-  "packagerPid": 8172
+  "packagerPort": null,
+  "packagerPid": null
 }

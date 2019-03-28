@@ -3,6 +3,7 @@ import {StyleSheet,Platform} from 'react-native';
 import {Scene, Router} from 'react-native-router-flux';
 
 import LoginView from './src/LoginView'
+import RegisterView from './src/RegisterView'
 import HomeView from './src/HomeView'
 import AlbumDetailView from './src/AlbumDetailView'
 
@@ -15,7 +16,8 @@ export default class App extends Component<Props> {
         const isAndroid = Platform.OS === 'android'
         return <Router>
           <Scene key="root">
-            <Scene key="login" component={LoginView} hideNavBar/>
+            <Scene key="logIn" component={LoginView} hideNavBar/>
+            <Scene key="singUp" component={RegisterView} hideNavBar={isAndroid}/>
             <Scene key="home" component={HomeView} hideNavBar/>
             <Scene key="albumDetail" component={AlbumDetailView} hideNavBar={isAndroid}/>
           </Scene>
